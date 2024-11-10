@@ -2,6 +2,7 @@ name: Matrix
 on: push
 jobs:
   Build:
+    runs-on: ${{matrix.OS}}
     continue-on-error: true
     strategy:
       matrix:
@@ -13,7 +14,7 @@ jobs:
         exclude:
           - node-version: 12
           - OS: windows-latest
-    runs-on: ${{matrix.OS}}
+    
     steps:
       - name: get Code
         uses: actions/checkout@v3
