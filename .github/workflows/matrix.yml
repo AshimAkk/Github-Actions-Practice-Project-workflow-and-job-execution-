@@ -13,7 +13,7 @@ jobs:
         exclude:
           - node-version: 12
             OS: windows-latest
-    runs-on: ${{matrix.OS}}
+    runs-on: ubuntu-latest
     steps:
       - name: get Code
         uses: actions/checkout@v3
