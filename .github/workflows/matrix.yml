@@ -1,27 +1,27 @@
-name: Matrix
-on: push
-jobs:
-  Build:
-    continue-on-error: true
-    strategy:
-      matrix:
-        node-version: [12, 14, 16]
-        OS: [ubuntu-latest, windows-latest]
-        include:
-          - node-version: 18
-          - OS: ubuntu-latest
-        exclude:
-          - node-version: 12
-            OS: windows-latest
-    runs-on: ubuntu-latest
-    steps:
-      - name: get Code
-        uses: actions/checkout@v3
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{matrix.node-version}}
-      - name: install Dependencies
-        run: npm ci
-      - name: Build project
-        run: npm run build
+# name: Matrix
+# on: push
+# jobs:
+#   Build:
+#     continue-on-error: true
+#     strategy:
+#       matrix:
+#         node-version: [12, 14, 16]
+#         OS: [ubuntu-latest, windows-latest]
+#         include:
+#           - node-version: 18
+#           - OS: ubuntu-latest
+#         exclude:
+#           - node-version: 12
+#             OS: windows-latest
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: get Code
+#         uses: actions/checkout@v3
+#       - name: Install NodeJS
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{matrix.node-version}}
+#       - name: install Dependencies
+#         run: npm ci
+#       - name: Build project
+#         run: npm run build
