@@ -85,3 +85,5 @@ jobs:
         run: |
           echo 'Something went wrong'
           echo '${{github}}'
+
+# The report job will evaluate to true if any other job fails 
