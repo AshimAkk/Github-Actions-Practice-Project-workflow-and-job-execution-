@@ -5,4 +5,5 @@ Tasks:
 - Working with continue on error
 - Working with failure() function 
 - Creating a matrix workflow
-- Improving the caching process of application dependencies
+- Improving the caching process of an applications dependencies
+- Create reusable workflows
