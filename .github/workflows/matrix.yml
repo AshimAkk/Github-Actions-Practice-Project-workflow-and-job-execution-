@@ -4,15 +4,15 @@ jobs:
   Build:
     continue-on-error: true
     strategy:
-        matrix:
-            node-version: [12,14,16]
-            OS: [ubuntu-latest, windows-latest]
-            include:
-                - node-version: 18
-                - OS: ubuntu-latest
-            exclude:
-                - node-version: 12
-                - OS: windows-latest
+      matrix:
+        node-version: [12, 14, 16]
+        OS: [ubuntu-latest, windows-latest]
+        include:
+          - node-version: 18
+          - OS: ubuntu-latest
+        exclude:
+          - node-version: 12
+          - OS: windows-latest
     runs-on: ${{matrix.OS}}
     steps:
       - name: get Code
@@ -25,6 +25,5 @@ jobs:
         run: npm ci
       - name: Build project
         run: npm run build
-
 
         ##retesting
